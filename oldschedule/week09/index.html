@@ -1,0 +1,647 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../images/noun-book-5924288.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Week 9 - Method 3: Mapping - DCI 295D - Digital Editions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ef5552">
+        
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 8.58c.78 0 1.44.61 1.44 1.42s-.66 1.44-1.44 1.44-1.42-.66-1.42-1.44.61-1.42 1.42-1.42M13 3c3.88 0 7 3.14 7 7 0 2.8-1.63 5.19-4 6.31V21H9v-3H8c-1.11 0-2-.89-2-2v-3H4.5c-.42 0-.66-.5-.42-.81L6 9.66A7.003 7.003 0 0 1 13 3m3 7c0-.16 0-.25-.06-.39l.89-.66c.05-.04.09-.18.05-.28l-.8-1.36c-.05-.09-.19-.14-.28-.09l-.99.42c-.18-.19-.42-.33-.65-.42L14 6.19c-.03-.14-.08-.19-.22-.19h-1.59c-.1 0-.19.05-.19.19l-.14 1.03c-.23.09-.47.23-.66.42l-1.03-.42c-.09-.05-.17 0-.23.09l-.8 1.36c-.05.14-.05.24.05.28l.84.66c0 .14-.03.28-.03.39 0 .13.03.27.03.41l-.84.65c-.1.05-.1.14-.05.24l.8 1.4c.06.1.14.1.23.1l.99-.43c.23.19.42.29.7.38l.14 1.08c0 .09.09.17.19.17h1.59c.14 0 .19-.08.22-.17l.16-1.08c.23-.09.47-.19.65-.37l.99.42c.09 0 .23 0 .28-.1l.8-1.4c.04-.1 0-.19-.05-.24l-.83-.65V10Z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M128 96h384v256h64V80c0-26.37-21.6-48-48-48H112c-26.37 0-48 21.63-48 48v272h64V96zm496 288H16c-8.75 0-16 7.3-16 16v16c0 35.25 28.75 64 64 64h512c35.25 0 64-28.75 64-64v-16c0-8.7-7.2-16-16-16zm-258.1-97.8c3.9 3.9 9 5.8 14.1 5.8s10.23-1.938 14.14-5.844l48-48c7.812-7.813 7.812-20.5 0-28.31l-48-48c-7.812-7.813-20.47-7.813-28.28 0-7.812 7.813-7.812 20.5 0 28.31l33.86 33.84-33.86 33.84C358 265.7 358 278.4 365.9 286.2zm-91.8-124.3c-7.812-7.813-20.47-7.813-28.28 0l-48 48c-7.812 7.813-7.812 20.5 0 28.31l48 48C249.8 290.1 254.9 292 260 292s10.23-1.938 14.14-5.844c7.812-7.813 7.812-20.5 0-28.31L240.3 224l33.86-33.84c6.94-7.76 6.94-20.46-.06-28.26z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12Z"/></svg>');}</style>
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../styles/website.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#week-9-method-3-mapping" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DCI 295D - Digital Editions" class="md-header__button md-logo" aria-label="DCI 295D - Digital Editions" data-md-component="logo">
+      
+  <img src="../../images/noun-book.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DCI 295D - Digital Editions
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Week 9 - Method 3: Mapping
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Course Info
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../schedule/" class="md-tabs__link">
+      Schedule
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../assignments/" class="md-tabs__link">
+        Assignments
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DCI 295D - Digital Editions" class="md-nav__button md-logo" aria-label="DCI 295D - Digital Editions" data-md-component="logo">
+      
+  <img src="../../images/noun-book.png" alt="logo">
+
+    </a>
+    DCI 295D - Digital Editions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Course Info
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Course Info" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Course Info
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Course info
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/" class="md-nav__link">
+        Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocols/" class="md-nav__link">
+        Protocols
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/" class="md-nav__link">
+        Schedule
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Assignments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Assignments" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Assignments
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/" class="md-nav__link">
+        Assignments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grading/" class="md-nav__link">
+        Specs Grading
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#read-for-tuesday" class="md-nav__link">
+    Read for Tuesday:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-november-8-2022" class="md-nav__link">
+    Tuesday, November 8, 2022
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-for-thursday" class="md-nav__link">
+    Read for Thursday:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thursday-november-10-2022" class="md-nav__link">
+    Thursday, November 10, 2022
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-9-assignments-due-tuesday-at-12pm" class="md-nav__link">
+    Week 9 Assignments - Due Tuesday at 12pm
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 9 Assignments - Due Tuesday at 12pm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-project-proposal" class="md-nav__link">
+    Final Project Proposal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blog-post-9" class="md-nav__link">
+    Blog post #9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-log-9" class="md-nav__link">
+    Activity log #9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="week-9-method-3-mapping">Week 9 - Method 3: Mapping<a class="headerlink" href="#week-9-method-3-mapping" title="Permanent link">#</a></h1>
+<p><em>We use maps all the time, whether we're finding our way in a new city or grabbing a bite to eat. But how do maps work? How do they tell stories? We’ll start by making maps by hand then move into data-driven maps.</em></p>
+<h2 id="read-for-tuesday">Read for Tuesday:<a class="headerlink" href="#read-for-tuesday" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://spatial.scholarslab.org/spatial-turn/what-is-the-spatial-turn/">What is the Spatial Turn?</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2015-06-25/how-to-avoid-being-fooled-by-bad-maps">When Maps Lie</a></li>
+</ul>
+<h2 id="tuesday-november-8-2022">Tuesday, November 8, 2022<a class="headerlink" href="#tuesday-november-8-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>icebreaker</li>
+<li>Ativity 9.1: To start thinking spatially, let's create a map from scratch.<ul>
+<li>Gather some blank paper and your favorite writing/drawing/coloring instruments.</li>
+<li>Without consulting any existing maps, draw a map of campus.</li>
+<li>In a small group, we'll compare our maps with each other. How are your maps similar or different? What choices did you make? How are your choices informed by your hobbies, extracurriculars, personality, abilities, etc? What was challenging? What makes our campus hard/easy to map?</li>
+<li>Now, let's look at the existing <a href="http://campusmap.wlu.edu">campus map</a> as well as images from the firm redesigning some of our spaces on campus. How did they approach our campus? What did they privilege or ignore? Does this depiction of space match your own perceptions?</li>
+<li>Finally, let's try out making a data-driven map of campus. How would you go about doing that? </li>
+</ul>
+</li>
+<li>Activity 9.2: Let's continue building on our Coeducation Report data set so we can use it to try out some mapping tools in the next activity. Our data set needs coordinates, not just location names, for it to be easily to process by the mapping tools. Before I tell you exactly how to add coordinates, spend some time on Google. What services are out there for converting location names to coordinates? How do they work? What formats do they accept or produce? Remember, while it might be possible to convert each location one at a time, this would not be practical if our data set was any bigger. Let's look for some more automated solutions. <em>Treat this as homework for Thursday if we don't finish on Tuesday.</em></li>
+</ul>
+<h2 id="read-for-thursday">Read for Thursday:<a class="headerlink" href="#read-for-thursday" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://lincolnmullen.com/projects/spatial-workshop/spatial-data.html">Working with Spatial Data</a></li>
+<li><a href="https://www.wired.com/story/ice-is-everywhere-using-library-science-to-map-child-separation/">ICE is Everywhere: Using Library Science to Map the Separation Crisis</a> and look over <a href="http://xpmethod.columbia.edu/torn-apart/volume/2/index">Torn Apart</a></li>
+<li>Look through the <a href="https://persuasivemaps.library.cornell.edu/">Persuasive Cartography</a> collection</li>
+<li>Check out <a href="https://www.loc.gov/ghe/cascade/index.html?appid=ddf9824ff56b4fb6a0f3e11515716738&amp;loclr=blogmap&amp;bookmark=150%20AD">Maps That Changed Our World</a> and <a href="http://landandlegacy.scholarslab.org/">Land and Legacy</a> for examples of a digital essays.     </li>
+</ul>
+<h2 id="thursday-november-10-2022">Thursday, November 10, 2022<a class="headerlink" href="#thursday-november-10-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>icebreaker</li>
+<li>readings discussion</li>
+<li>Activity 9.3: How do we find coordinates? <a href="https://workspace.google.com/marketplace/app/geocode_by_awesome_table/904124517349">Geocoding</a>.</li>
+<li>Activity 9.4: Let's make a map together.<ul>
+<li>Make sure you have a copy of the data on your computer (with coordinates) or in Google Drive. </li>
+<li>Visit <a href="https://www.google.com/maps">Google Maps</a> and be sure you're logged in.</li>
+<li>Use hamburger menu on the left to get to <code>Your Places</code> &gt; <code>Maps</code> tab. Click <code>Create New</code> at the bottom.</li>
+<li>Under the text <code>Untitled Layer</code>, click <code>Import</code> to select our data.</li>
+<li>Be sure to select which fields should constitute the addresses or coordinates. Google's pretty smart about this, but double check!</li>
+<li>Select which field should be the title.</li>
+<li>Use the paintbrush icon to style the pins by a certain field.</li>
+<li>What else can you do? What can't you do? Does this answer our research question?</li>
+</ul>
+</li>
+<li>Activity 9.5: Mapping tools! There are a lot of options for tools that will create maps. In this activity, we'll divide into groups and test out a platform or two. We'll use the Coeducation Report as the data source for our map (it's in Box).<ul>
+<li>Platforms:<ul>
+<li><a href="http://hdlab.stanford.edu/palladio/">Palladio</a></li>
+<li><a href="https://www.arcgis.com/home/index.html">ArcGIS Online</a> - Note that you can create a free public account or use the StoryMaps feature. We have an institutional license if you want to use ArcGIS longer term.</li>
+<li><a href="https://www.datawrapper.de/maps">DataWrapper</a> (tutorial <a href="https://handsondataviz.org/symbolmap-datawrapper.html">here</a>)</li>
+<li><a href="https://public.tableau.com/app/discover">Tableau Public</a></li>
+</ul>
+</li>
+<li>In your groups, answer the following questions. Record your answers in a <a href="https://wlu.app.box.com/folder/181450150100">Boxnote in this folder</a> so that other students can consult the information.<ul>
+<li>Who created this tool? Is it open source? Is it free?</li>
+<li>How do I use it? Browser or download? OS preference?</li>
+<li>How do I add data? What formats does it accept?</li>
+<li>How do I add layers?</li>
+<li>How do I add shapes or pins?</li>
+<li>Can I add a historical map? How?</li>
+<li>Where is the basemap from? (Google, OpenStreetMap, etc.) Can I change it?</li>
+<li>What type of mapping project would suit this tool?</li>
+<li>Can you find the documentation? Other tutorials?</li>
+<li>Using the Coeducation Report data, create a map. You may need to alter the data to fit the requirements of the mapping tool.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-9-assignments-due-tuesday-at-12pm">Week 9 Assignments - Due Tuesday at 12pm<a class="headerlink" href="#week-9-assignments-due-tuesday-at-12pm" title="Permanent link">#</a></h2>
+<h3 id="final-project-proposal">Final Project Proposal<a class="headerlink" href="#final-project-proposal" title="Permanent link">#</a></h3>
+<p>See <a href="../../assignments/#proposal">assignment description</a>. </p>
+<h3 id="blog-post-9">Blog post #9<a class="headerlink" href="#blog-post-9" title="Permanent link">#</a></h3>
+<p>There are a lot of ways to use maps in research and scholarship! For this blog post, select a project from <a href="https://reviewsindh.pubpub.org/spatial-spatiotemporal-analysis">this list of spatial projects</a> from the site <a href="https://reviewsindh.pubpub.org/review-process">Reviews in Digital Humanities</a>. Try to pick that has a web map, not just a timeline. In your write-up, try to concentrate on the ways the author uses the map to answer research questions (or fails to). Another angle: how does the map enable you to answer your own research questions? </p>
+<p><strong>Finally, and this is important:</strong> try to avoid reading the review of the project until after you've looked at it yourself. Write your ntoes, then come back to the full review. What did they include that you overlooked? What did you notice that the review didn't touch on? </p>
+<p><strong>Specs:</strong> </p>
+<ul>
+<li>Create a WordPress post, turn in the link on Canvas.</li>
+<li>300-500 words. </li>
+<li>Free from grammatical errors, typos. </li>
+<li>Credit and link out to sources when appropriate. I won't require that you use a certain citation style, but you should be in the habit of crediting sources and using in-text links. If you feel better about using a formal citation style, go for it! </li>
+<li>Address the following:<ul>
+<li>Who created this project? What is their institutional home and who made up their team? (No need to list every name, just summarize the types of people involved). </li>
+<li>What is the map? Is it modern or historical? What is the source of the data? Is it something you can access and download yourself?</li>
+<li>What are their research questions? Can you find them easily? If not, what can you surmise are the questions? </li>
+<li>What type of spatial analysis is being done? What does the map enable you to do to? </li>
+<li>What software is being used to present the map? How can you tell? </li>
+<li>How do you feel about the design of the website? What are its affordances? Are the data visualizations well-done? </li>
+<li>Finally, compare and contrast your review to the one in Reviews in DH. Where did you overlap or differ? </li>
+</ul>
+</li>
+</ul>
+<h3 id="activity-log-9">Activity log #9<a class="headerlink" href="#activity-log-9" title="Permanent link">#</a></h3>
+<p>Select a second mapping platform to explore (not the one you looked at in class). In 200-300 words, answer the same questions from our in-class activity, then provide additional commentary on the differences between this platform and the one you looked at in class. How do the affordances differ? Use the Coeducation Report data set to create a map, then embed it into your post.</p>
+<p><strong>Specs:</strong> </p>
+<ul>
+<li>Create a WordPress post, turn in the link on Canvas.</li>
+<li>200-300 words that 1) answer the questions from our in-class activity and 2) comments on the differences between this platform and the one you looked at in class. </li>
+<li>Embed the map you created in your post. In most cases, this should involve an <code>iframe</code> code, not just a screenshot.</li>
+<li>Free from grammatical errors, typos. </li>
+<li>Credit and link out to sources when appropriate. I won't require that you use a certain citation style, but you should be in the habit of crediting sources and using in-text links. If you feel better about using a formal citation style, go for it! </li>
+</ul>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>

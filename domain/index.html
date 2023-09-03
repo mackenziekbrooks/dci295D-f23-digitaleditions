@@ -1,0 +1,604 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../images/noun-book-5924288.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Domain - DCI 295D - Digital Editions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ef5552">
+        
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 8.58c.78 0 1.44.61 1.44 1.42s-.66 1.44-1.44 1.44-1.42-.66-1.42-1.44.61-1.42 1.42-1.42M13 3c3.88 0 7 3.14 7 7 0 2.8-1.63 5.19-4 6.31V21H9v-3H8c-1.11 0-2-.89-2-2v-3H4.5c-.42 0-.66-.5-.42-.81L6 9.66A7.003 7.003 0 0 1 13 3m3 7c0-.16 0-.25-.06-.39l.89-.66c.05-.04.09-.18.05-.28l-.8-1.36c-.05-.09-.19-.14-.28-.09l-.99.42c-.18-.19-.42-.33-.65-.42L14 6.19c-.03-.14-.08-.19-.22-.19h-1.59c-.1 0-.19.05-.19.19l-.14 1.03c-.23.09-.47.23-.66.42l-1.03-.42c-.09-.05-.17 0-.23.09l-.8 1.36c-.05.14-.05.24.05.28l.84.66c0 .14-.03.28-.03.39 0 .13.03.27.03.41l-.84.65c-.1.05-.1.14-.05.24l.8 1.4c.06.1.14.1.23.1l.99-.43c.23.19.42.29.7.38l.14 1.08c0 .09.09.17.19.17h1.59c.14 0 .19-.08.22-.17l.16-1.08c.23-.09.47-.19.65-.37l.99.42c.09 0 .23 0 .28-.1l.8-1.4c.04-.1 0-.19-.05-.24l-.83-.65V10Z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M128 96h384v256h64V80c0-26.37-21.6-48-48-48H112c-26.37 0-48 21.63-48 48v272h64V96zm496 288H16c-8.75 0-16 7.3-16 16v16c0 35.25 28.75 64 64 64h512c35.25 0 64-28.75 64-64v-16c0-8.7-7.2-16-16-16zm-258.1-97.8c3.9 3.9 9 5.8 14.1 5.8s10.23-1.938 14.14-5.844l48-48c7.812-7.813 7.812-20.5 0-28.31l-48-48c-7.812-7.813-20.47-7.813-28.28 0-7.812 7.813-7.812 20.5 0 28.31l33.86 33.84-33.86 33.84C358 265.7 358 278.4 365.9 286.2zm-91.8-124.3c-7.812-7.813-20.47-7.813-28.28 0l-48 48c-7.812 7.813-7.812 20.5 0 28.31l48 48C249.8 290.1 254.9 292 260 292s10.23-1.938 14.14-5.844c7.812-7.813 7.812-20.5 0-28.31L240.3 224l33.86-33.84c6.94-7.76 6.94-20.46-.06-28.26z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12Z"/></svg>');}</style>
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/website.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#your-domain" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DCI 295D - Digital Editions" class="md-header__button md-logo" aria-label="DCI 295D - Digital Editions" data-md-component="logo">
+      
+  <img src="../images/noun-book.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DCI 295D - Digital Editions
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Domain
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        Course Info
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../schedule/" class="md-tabs__link">
+      Schedule
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../assignments/" class="md-tabs__link">
+        Assignments
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DCI 295D - Digital Editions" class="md-nav__button md-logo" aria-label="DCI 295D - Digital Editions" data-md-component="logo">
+      
+  <img src="../images/noun-book.png" alt="logo">
+
+    </a>
+    DCI 295D - Digital Editions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Course Info
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Course Info" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Course Info
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Course info
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/" class="md-nav__link">
+        Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protocols/" class="md-nav__link">
+        Protocols
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule/" class="md-nav__link">
+        Schedule
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Assignments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Assignments" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Assignments
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignments/" class="md-nav__link">
+        Assignments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grading/" class="md-nav__link">
+        Specs Grading
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-domain" class="md-nav__link">
+    Your domain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy" class="md-nav__link">
+    Privacy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reclaim-hosting" class="md-nav__link">
+    Reclaim Hosting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wordpress" class="md-nav__link">
+    WordPress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domain-instructions" class="md-nav__link">
+    Domain Instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Domain Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uploading-htmlcss-files-to-your-domain" class="md-nav__link">
+    Uploading HTML/CSS files to your domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-wordpress" class="md-nav__link">
+    Install WordPress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customize-wordpress" class="md-nav__link">
+    Customize WordPress
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Domain</h1>
+
+<h2 id="your-domain">Your domain<a class="headerlink" href="#your-domain" title="Permanent link">#</a></h2>
+<p>There are many reasons you might want your own website. Whether it's for work, school, volunteering, organizing, art, or just for fun, there are plenty of ways to carve out your own corner of the Web. Social media platforms like LinkedIn or Facebook are ubiquitous now, but it used to be that if you wanted to appear in search results, you had to create your own website. If you are a student or navigating the professional world, chances are that 1) someone out there might Google you and 2) you want them to see accurate information and work that you're proud of. A professional website can be a simple single page with limited information, or it can contain your whole life. Chances are, at some point you've relied on information from a personal website. Maybe you found an article you need for a bibliography, a snippet of code that had been giving you trouble, or even an email address for someone who has lost their wallet.</p>
+<p>If you're conducting research in a field, making art, or selling products, there are others who will be interested in the work you're doing. Check out the sites of others in your intended field of study or career path to see what their websites look like. Some scholars share articles they've written, code libraries, data they've gathered, or new methods they're experimenting with. In the library and digital scholarship world, open and public scholarship is highly valued. Many of the links in this website go to the websites of DH-ers who have been generous enough to share a tutorial or write up their thoughts on a particular method.</p>
+<p>Whether you create a professional portfolio or not, there is a lot to be said for the form of a website. Most of the scholarship we read, not to mention everything else, has been designed and formatted to be consumed on the Web. Presenting your own work in that format gives you experience with seemingly silly things like getting your images to float nicely with your text or finding a place to reliably store your data. Creating a clean, well-organized website is harder than it looks! Just like it's easier to read a paragraph than to write one, creating a website takes practice.</p>
+<h2 id="privacy">Privacy<a class="headerlink" href="#privacy" title="Permanent link">#</a></h2>
+<p>All that being said, you do not have to have a strong presence on the Web. You may have personal and legitimate reasons for not wanting to be found in search results. If you're a student, you may not want your homework following you for decades to come. You have the right to privacy and to completing your coursework in a secure way. While you are required to use your domain for this class, you can make it private during the course or remove it after the class is over. The domain provided for you in this class will be de-activated following your graduation, unless you choose to take over ownership.</p>
+<h2 id="reclaim-hosting">Reclaim Hosting<a class="headerlink" href="#reclaim-hosting" title="Permanent link">#</a></h2>
+<p>There are many places to find space on the Web, but many individuals and academic institutions work with <a href="https://reclaimhosting.com/">Reclaim Hosting</a>, an education-focused web hosting company. Reclaim offers reasonable rates, good support, and an awareness of the needs of academic projects. Some institutions offer a "domain of one's" program in which affiliated individuals can obtain a domain.</p>
+<h2 id="wordpress">WordPress<a class="headerlink" href="#wordpress" title="Permanent link">#</a></h2>
+<p>Whether you knew it or not, chances are you have visited many, many WordPress websites. WordPress is an open-source content management system used by 42% of the web (as claimed by WordPress). Though it's thought of as a blogging platform, it powers plenty of major websites. We'll use WordPress in this class as a platform for blog posts and your final project. It is easy to install on your domain and has plenty of customization options. It's likely that you might need to use WordPress at a future job, internship, or volunteer venture, so it's a good skill to have. Because of its popularity, there are many resources online for learning or troubleshooting WordPress. </p>
+<h2 id="domain-instructions">Domain Instructions<a class="headerlink" href="#domain-instructions" title="Permanent link">#</a></h2>
+<h3 id="uploading-htmlcss-files-to-your-domain">Uploading HTML/CSS files to your domain<a class="headerlink" href="#uploading-htmlcss-files-to-your-domain" title="Permanent link">#</a></h3>
+<ol>
+<li>Navigate to http://yourdomain.wludci.info/cpanel and login.</li>
+<li>In CPanel, open up the File Manager.</li>
+<li>Navigate to the <code>public_html</code> folder.</li>
+<li>Create a new folder titled <code>activities</code> or something similar.</li>
+<li>Upload all your HTML and CSS files.</li>
+<li>Navigate to your equivalent of https://username.wludci.info/activities. What do you see?</li>
+</ol>
+<h3 id="install-wordpress">Install WordPress<a class="headerlink" href="#install-wordpress" title="Permanent link">#</a></h3>
+<ol>
+<li>Login to the Cpanel for your domain by adding <code>/cpanel</code> to the end of your URL. Use the username and password sent to you by Reclaim Hosting/Jeff Barry.</li>
+<li>You should see a Wordpress icon near the top of the page. Click on it to begin installing Wordpress.</li>
+<li>Find the "install this application" button.</li>
+<li>Work through the installation. You can leave the default settings except for the following:<ul>
+<li>Directory - since you might want to use this domain for other things, let's put course materials in a subdirectory, such as <code>http://www.mydomain.info/dci101</code>.</li>
+<li>Change the administrator username and password to something you are likely to remember. Save these credentials for later!</li>
+<li>Customize the website title and tagline.</li>
+</ul>
+</li>
+<li>Press install to finish up.</li>
+<li>You should now be able to access your wordpress admin interface by appending <code>/wp-admin</code> to your selected URL.</li>
+</ol>
+<h3 id="customize-wordpress">Customize WordPress<a class="headerlink" href="#customize-wordpress" title="Permanent link">#</a></h3>
+<ol>
+<li>Change your theme by going to <code>Appearance &gt; Themes</code> in the Admin panel. Select an installed theme, or find a new one with the <code>Add New</code> button. Activate multiple themes to try them out!</li>
+<li>Check your comment settings in <code>Settings &gt; Discussion</code> to make sure your classmates will be able to comment on your posts.</li>
+<li>Set up your menu by going to <code>Appearance &gt; Menus</code>. You will need to create a menu, add pages to it, and select a location for that menu. This is usually the most confusing part of Wordpress! There should be a video tutorial in our Box folder.</li>
+<li>Before you start adding content to your site, play around with as many of the settings and features as possible. What do all the bells and whistles do? Add your own images or colors. This is your site!</li>
+</ol>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="http://digital.brynmawr.edu/docs/">Domain of One's Own Documentation</a></li>
+<li><a href="https://www.internetingishard.com/html-and-css/">HTML &amp; CSS is Hard</a></li>
+<li><a href="https://support.reclaimhosting.com/hc/en-us/categories/360005246294-Web-Hosting-and-cPanel">Reclaim Hosting Support</a></li>
+<li><a href="https://www.w3schools.com/html/">W3 Schools HTML</a></li>
+<li><a href="https://www.w3schools.com/html/">W3 Schools CSS</a></li>
+<li><a href="https://yournamehere.scholarslab.org/">Your Name Here</a> - Portfolio creation </li>
+</ul>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>

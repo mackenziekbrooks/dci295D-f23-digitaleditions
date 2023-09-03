@@ -1,0 +1,624 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../images/noun-book-5924288.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Week 1 - What is DCI? - DCI 295D - Digital Editions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ef5552">
+        
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 8.58c.78 0 1.44.61 1.44 1.42s-.66 1.44-1.44 1.44-1.42-.66-1.42-1.44.61-1.42 1.42-1.42M13 3c3.88 0 7 3.14 7 7 0 2.8-1.63 5.19-4 6.31V21H9v-3H8c-1.11 0-2-.89-2-2v-3H4.5c-.42 0-.66-.5-.42-.81L6 9.66A7.003 7.003 0 0 1 13 3m3 7c0-.16 0-.25-.06-.39l.89-.66c.05-.04.09-.18.05-.28l-.8-1.36c-.05-.09-.19-.14-.28-.09l-.99.42c-.18-.19-.42-.33-.65-.42L14 6.19c-.03-.14-.08-.19-.22-.19h-1.59c-.1 0-.19.05-.19.19l-.14 1.03c-.23.09-.47.23-.66.42l-1.03-.42c-.09-.05-.17 0-.23.09l-.8 1.36c-.05.14-.05.24.05.28l.84.66c0 .14-.03.28-.03.39 0 .13.03.27.03.41l-.84.65c-.1.05-.1.14-.05.24l.8 1.4c.06.1.14.1.23.1l.99-.43c.23.19.42.29.7.38l.14 1.08c0 .09.09.17.19.17h1.59c.14 0 .19-.08.22-.17l.16-1.08c.23-.09.47-.19.65-.37l.99.42c.09 0 .23 0 .28-.1l.8-1.4c.04-.1 0-.19-.05-.24l-.83-.65V10Z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M128 96h384v256h64V80c0-26.37-21.6-48-48-48H112c-26.37 0-48 21.63-48 48v272h64V96zm496 288H16c-8.75 0-16 7.3-16 16v16c0 35.25 28.75 64 64 64h512c35.25 0 64-28.75 64-64v-16c0-8.7-7.2-16-16-16zm-258.1-97.8c3.9 3.9 9 5.8 14.1 5.8s10.23-1.938 14.14-5.844l48-48c7.812-7.813 7.812-20.5 0-28.31l-48-48c-7.812-7.813-20.47-7.813-28.28 0-7.812 7.813-7.812 20.5 0 28.31l33.86 33.84-33.86 33.84C358 265.7 358 278.4 365.9 286.2zm-91.8-124.3c-7.812-7.813-20.47-7.813-28.28 0l-48 48c-7.812 7.813-7.812 20.5 0 28.31l48 48C249.8 290.1 254.9 292 260 292s10.23-1.938 14.14-5.844c7.812-7.813 7.812-20.5 0-28.31L240.3 224l33.86-33.84c6.94-7.76 6.94-20.46-.06-28.26z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12Z"/></svg>');}</style>
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../styles/website.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#week-1-what-is-dci" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DCI 295D - Digital Editions" class="md-header__button md-logo" aria-label="DCI 295D - Digital Editions" data-md-component="logo">
+      
+  <img src="../../images/noun-book.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DCI 295D - Digital Editions
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Week 1 - What is DCI?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Course Info
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../schedule/" class="md-tabs__link">
+      Schedule
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../assignments/" class="md-tabs__link">
+        Assignments
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DCI 295D - Digital Editions" class="md-nav__button md-logo" aria-label="DCI 295D - Digital Editions" data-md-component="logo">
+      
+  <img src="../../images/noun-book.png" alt="logo">
+
+    </a>
+    DCI 295D - Digital Editions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Course Info
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Course Info" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Course Info
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Course info
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/" class="md-nav__link">
+        Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocols/" class="md-nav__link">
+        Protocols
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/" class="md-nav__link">
+        Schedule
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Assignments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Assignments" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Assignments
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/" class="md-nav__link">
+        Assignments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grading/" class="md-nav__link">
+        Specs Grading
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thursday-september-8" class="md-nav__link">
+    Thursday, September 8
+  </a>
+  
+    <nav class="md-nav" aria-label="Thursday, September 8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-for-tuesday" class="md-nav__link">
+    Read for Tuesday
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-september-13" class="md-nav__link">
+    Tuesday, September 13
+  </a>
+  
+    <nav class="md-nav" aria-label="Tuesday, September 13">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-for-thursday" class="md-nav__link">
+    Read for Thursday
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thursday-september-15" class="md-nav__link">
+    Thursday, September 15
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-1-assignments" class="md-nav__link">
+    Week 1 Assignments
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 1 Assignments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blog-post-1" class="md-nav__link">
+    Blog post #1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-log-1-the-internets-earliest-memory-of-you" class="md-nav__link">
+    Activity log #1 - the internet's earliest memory of you
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="week-1-what-is-dci">Week 1 - What is DCI?<a class="headerlink" href="#week-1-what-is-dci" title="Permanent link">#</a></h1>
+<p>In our first week, let's unpack what we even mean by digital culture and information. How do we define something that we are surrounded by every day? How do we talk about it? Study it? Analyze it? Critique it?</p>
+<h2 id="thursday-september-8">Thursday, September 8<a class="headerlink" href="#thursday-september-8" title="Permanent link">#</a></h2>
+<p>Agenda:</p>
+<ul>
+<li>Before class, take this getting to know you <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGpO7cQLQTw3sfEPQElA3mAREaTxNF_m6FM3H5X7AP0bSdLQ/viewform?usp=sf_link">survey</a>.</li>
+<li>ice breaker: what is your earliest memory of the internet?</li>
+<li>syllabus day/course overview</li>
+<li>Activity 1.1 - HTML<ul>
+<li>Let's build a basic webspage using HTML. We'll go through the process live in class.</li>
+<li>Use the <a href="https://www.w3schools.com/html/">W3 Schools</a> if you need to look something up. </li>
+</ul>
+</li>
+</ul>
+<h3 id="read-for-tuesday">Read for Tuesday<a class="headerlink" href="#read-for-tuesday" title="Permanent link">#</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Ay7X0XDztRw">Changing Nature of Knowledge in the Internet Epoch</a> - David Weinberger video</li>
+<li><a href="https://en.wikipedia.org/wiki/DIKW_pyramid">DIKW pyramid</a> - Yes this is Wikipedia. Read it once, then go back through paying attention to this page's construction, citations, and even the page's history. Who is contributing? </li>
+<li><a href="https://hbr.org/2010/02/data-is-to-info-as-info-is-not">The Problem with the Data-Information-Knowledge-Wisdom Hierarchy</a></li>
+</ul>
+<h2 id="tuesday-september-13">Tuesday, September 13<a class="headerlink" href="#tuesday-september-13" title="Permanent link">#</a></h2>
+<ul>
+<li>What piece of technology do you wish were real?</li>
+<li>Discussion - what is culture? information? digital? Let's work on defining terms and understanding how they fit together.</li>
+<li>Let's use this <a href="https://jamboard.google.com/d/1AV7FrID30txMpCNaObucWy68Z9bqNhaa3iNYva8NfWo/edit?usp=sharing">Jamboard</a> for today.</li>
+<li>Activity 1.2 - Domain + WordPress setup, see <a href="https://mackenziekbrooks.github.io/dci101-f22/domain/#domain-instructions">instructions</a></li>
+</ul>
+<h3 id="read-for-thursday">Read for Thursday<a class="headerlink" href="#read-for-thursday" title="Permanent link">#</a></h3>
+<ul>
+<li>Introduction of <a href="https://ebookcentral.proquest.com/lib/wlu/reader.action?docID=5732673">History in the Age of Abdundance?</a> - Ian Milligan</li>
+<li><a href="https://lab.cccb.org/en/the-i-in-the-internet/">The I in Internet</a> - Jia Tolentino</li>
+<li><a href="https://er.educause.edu/articles/2013/8/does-digital-scholarship-have-a-future">Does Digital Scholarship Have a Future?</a> - Ed Ayers</li>
+</ul>
+<h2 id="thursday-september-15">Thursday, September 15<a class="headerlink" href="#thursday-september-15" title="Permanent link">#</a></h2>
+<ul>
+<li>Discussion<ul>
+<li>what is (digital) culture? 2 min paper</li>
+<li><a href="https://geocities.restorativland.org/">Geocities</a> deep dive - What can you learn about internet culture from exploring these sites? </li>
+<li>What do Milligan and Tolentino and Ayers say?      </li>
+</ul>
+</li>
+<li>Assignment overview </li>
+<li>Activity 1.3 - WordPress Pt 2</li>
+</ul>
+<h2 id="week-1-assignments">Week 1 Assignments<a class="headerlink" href="#week-1-assignments" title="Permanent link">#</a></h2>
+<p><strong>Due by Tuesday at 12pm</strong></p>
+<h3 id="blog-post-1">Blog post #1<a class="headerlink" href="#blog-post-1" title="Permanent link">#</a></h3>
+<p>What brought you to this class? How do our definitions of digital culture and information relate your personal life? Academic life? What do you find most interesting about issues around DCI? Concerning? What personal goals do you have for this class - skills you want to develop or topics you want to explore? What will success look like <em>for you</em>, beyond just an A? </p>
+<p><strong>Specifications:</strong></p>
+<ul>
+<li>Create a WordPress post, then turn in the URL in Canvas. </li>
+<li>300-500 words.</li>
+<li>Free from grammatical errors, typos. </li>
+<li>Credit and link out to sources when appropriate. I won't require that you use a certain citation style, but you should be in the habit of crediting sources and using in-text links. If you feel better about using a formal citation style, go for it! </li>
+</ul>
+<h3 id="activity-log-1-the-internets-earliest-memory-of-you">Activity log #1 - the internet's earliest memory of you<a class="headerlink" href="#activity-log-1-the-internets-earliest-memory-of-you" title="Permanent link">#</a></h3>
+<p>At the beginning of this course, I asked you your earliest memory of the internet. For this activity, let's turn that question around. What is the internet's earliest memory of you? Think back to Ian Mulligan's story about Warhammer in the 1990s. </p>
+<p>Write a short biography of yourself using only information that can be found online about you, preferably in public with no logging in. Use Google and the <a href="https://archive.org/web/">Wayback Machine</a> to search for youself and anything in your past life on the web. What can you find? What <em>can't</em> you find? What is surprising? What has been erased? </p>
+<p>After you've dug around and composed the bio, let's hear a little about the process. What was easy to find? Difficult? How has your web presence changed over time? What were you taught about using the internet with respect to privacy and how have your thoughts changed over time? How much of the content was on social media vs. another site (your school, team, etc)? If a researcher from the future is trying to learn about you, what are they missing out on? </p>
+<p><strong>Specifications:</strong> </p>
+<ul>
+<li>Create a WordPress page, then turn in the URL in Canvas. If you feel more comfortable keeping this page private, that's fine, just include the password when you submit.</li>
+<li>50-100 word bio. 150-300 words on process. </li>
+<li>Include links and images as you're comfortable. If you do not want to link to an old webpage (for privacy, embarassment, etc), consider a small screenshot. </li>
+</ul>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>
