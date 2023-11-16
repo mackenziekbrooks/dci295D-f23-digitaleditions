@@ -24,7 +24,7 @@ Students will:
 
 * Comprehend the definition, purpose, value, and uses of scholarly editions.
 * Acquire foundational skills in digital publishing, including HTML, CSS, TEI, static site generation, and GitHub.
-* Work collaboratively to build our own digital edition.
+* Work collaboratively to build our own digital edition website.
 * Develop skills in research with archival/primary and secondary sources.
 
 

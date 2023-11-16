@@ -27,4 +27,4 @@ Whether you are experiencing challenges with your studying and learning or just 
  
 In addition, peer tutors are available to support you with the academic content of your courses. Upper-division students are available to tutor in most lower-level courses at the University, free of charge.
  
-To explore these and other academic resources, please visit the [Harte Center’s website](hartectl.wlu.edu/).
+To explore these and other academic resources, please visit the [Harte Center’s website](http://hartectl.wlu.edu/).

@@ -30,11 +30,11 @@ To accomplish this, we'll break the project down into a number of parts. Each of
 
 ### Proposal
 
-Time to figure out which article you'd like to work on for your project. There are many topics to choose from! You should select something that is of interest to you - maybe it's the location, the people involved, or the content it's covering. Shorter articles will not necessarily be easier. You should browse the Proceedings in print and use the [Table of Contents spreadsheet](https://wlu.app.box.com/file/1289009716733) (data entry by Margaret Alexander) or the index. Be sure to completely read your article before you make your selection.
+Time to figure out which article you'd like to work on for your project. There are many topics to choose from! You should select something that is of interest to you - maybe it's the location, the people involved, or the content it's covering. Shorter articles will not necessarily be easier. You should browse the Proceedings in print or [online](https://wlu.app.box.com/folder/223091696832) and use the [Table of Contents spreadsheet](https://wlu.app.box.com/file/1289009716733) (data entry by Margaret Alexander) or the index. Be sure to completely read your article before you make your selection. Don't worry about the tech part of this project, we're still learning those skills. Focus on the content of the article and the questions that it raises.
 
 **Specs:**
 
-* Due [DATE]
+* Due October 19th at noon. 
 * Turn in on Canvas. 
 * 400-500 words.
 * Free from grammatical errors, typos. Include links/citations as necessary.
@@ -46,11 +46,20 @@ Time to figure out which article you'd like to work on for your project. There a
 
 ### Annotated Bibliography
 
-This project is going to require some deep research. Heads-up! Some of your sources may not be available on the internet, but only in Special Collections or in the stacks. This assignment is designed to get you digging for sources and reflecting on their use in your project. Rely on our research workshop day for places to conduct this research. 
+This project is going to require some deep research. Heads-up! Some of your sources may not be available on the internet, but only in Special Collections or in the stacks. This assignment is designed to get you digging for sources and reflecting on their use in your project. Rely on our research workshop day for places to conduct this research. It may be that some of the sources in your annotated bibliography are the ones in your article. But you may also want to find other sources to verify the statements in the article. 
+
+You should plan to use:
+
+* the [Library Catalog](https://library.wlu.edu/)
+* [ArchivesSpace](https://archivesspace.wlu.edu/)
+* [Digital Repository](https://dspace.wlu.edu/)
+* [Google Scholar](http://scholar.google.com/)
+* Some of our [databases](https://libguides.wlu.edu/az/databases)
+* The internet/Wikipedia 
 
 **Specs:**
 
-* Due [DATE]
+* Due October 31 at noon.
 * Turn in on Canvas.
 * Include 8-10 sources. 4+ must be *primary sources* and 4+ should be *secondary sources*. 
 * Each source should be formatted in an established citation style (probably Chicago?). Use [Zotero](http://library.wlu.edu/zotero) if it helps! 
@@ -59,36 +68,58 @@ This project is going to require some deep research. Heads-up! Some of your sour
 
 ### teiHeader Markup
 
-An essential piece of your project is completing the `<teiHeader` part of your digital edition. This section of the XML contains all the *metadata* (my favorite!) about your article - including information about you, the encoder! You'll also want to follow our project guidelines so that there is some consistency across articles and everything displays correctly. 
+An essential piece of your project is completing the `<teiHeader` part of your digital edition. This section of the XML contains all the *metadata* (my favorite!) about your article - including information about you, the encoder! You'll want to follow the [TEI guidelines](https://tei-c.org/release/doc/tei-p5-doc/en/html/HD.html) so that there is some consistency across articles and everything displays correctly. We'll work together in class to come up with our project's way of entering data. 
 
 **Specs:**
 
-* Due [DATE]
-* Upload to GitHub, turn in link on Canvas.
-* You must fill out the following fields according to our project guidelines:
+* Due November 7 at noon.
+* Turn in link on Canvas.
+* Your XML should be well formed, properly nested and structured. The teiHeader insists on a specific order for fields, so you should follow the examples. 
+* You must fill out the following sections according to our project guidelines:
 	* `teiHeader`
-	* `teiHeader`
+	* `titleStmt`
+	* `respStmt`
+	* `editionStmt`
+	* `publicationStmt`
+	* `notesStmt`
+	* `sourceDesc`
+	* `encodingDesc`
+	* `revisionDesc`
 
 ### TEI Body Markup
 
-This is the core part of your digital edition! Time to markup the body of the text. This section of the XML contains all the actual text from your article as it appears on the page. While you can copy the text from the `.pdf` or `.txt` files, you should be diligent about checking for OCR errors. Your markup should include the tags/elements in our guidelines, as well as any others are that are relevant. 
+This is the core part of your digital edition! Time to markup the body of the text. This section of the XML contains all the actual text from your article as it appears on the page. While you can copy the text from the `.pdf` or `.txt` files, you should be diligent about checking for OCR errors. While each article will have its unique requirements, the markup should still conform to the TEI guidelines and any decisions we make in class. 
 
 **Specs:**
 
-* Due [DATE]
+* Due November 14 at noon.
 * Upload to GitHub, turn in link on Canvas.
-* You must fill out the following fields according to our project guidelines:
-	* `teiHeader`
-	* `teiHeader`
+* Your markup should address:
+	* [Paragraphs](https://tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COPA) and any other [text divisions](https://tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDIV), sections, headings, etc.
+	* [Highlighting and quotation](https://tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHQ)
+	* [Simple editorial changes](https://tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COED)
+	* [Notes](https://tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONO) while your editorial notes are not due yet, some of you may have to incorporate original notes from the authors.
+	* [Names, Dates, People, and Places](https://tei-c.org/release/doc/tei-p5-doc/en/html/ND.html)
 
 
 ### Annotations 
 
-The annotations of your digital edition is what sets it apart as a scholarly project. They are the point where you, the scholar and encoder, can chime with your own observations, updates, expertise, links, etc. They create the hypertext potential of the internet - a kicking off point for research rabbit holes. You should plan to craft 8-10 quality annotations that expand on aspects of your chosen article. 
+The annotations of your digital edition is what sets it apart as a scholarly project. They are the point where you, the scholar and encoder, can chime with your own observations, updates, expertise, links, etc. They leverage the hypertext potential of the internet - a kicking off point for research rabbit holes. You should plan to craft 8-10 quality annotations that expand on aspects of your chosen article. 
+
+Potential annotations could be:
+
+* links to relevant collections in [ArchivesSpace](https://www.archivesspace.wlu.edu/)
+* links to digital images of documents references, likely from [DSpace](https://dspace.wlu.edu/) or other newspaper databases or digital libraries
+* explanation of comment/references made by the author. You were new to this article just a few weeks ago! What did you have to look up? 
+* more biographical information about individuals, including links to obituaries or Find a Grave. 
+* update to information that is dated! These articles are 10+ years old, some up to 50! What has happened since then? 
+* Questions or gaps in information. You can indicate that some piece of information is not accessible. 
+* FYI you can make any of your tags a link by including the ref attribute. Example: `<persName ref="http://www.google.com">`
 
 **Specs:**
 
-* Due [DATE]
+* List of potential annotations due November 30 at noon. You should identify at least 10 different types of things that could become annotations. 
+* Final annotations due December 7 at noon.
 * Upload to GitHub, turn in link on Canvas.
 * 8-10 annotations. 
 * Annotations can and should vary in length. At least two should be multiple sentences in length.
@@ -100,7 +131,7 @@ No project is complete without time taken to reflect on its successes and lesson
 
 **Specs:**
 
-* Due [DATE]
+* Due December 15 at noon.
 * Submit as a document in Canvas.
 * 500-1000 words.
 * Address the following. Your answers should be about the course as a whole, not just your digital edition.	
