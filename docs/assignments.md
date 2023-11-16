@@ -114,6 +114,7 @@ Potential annotations could be:
 * more biographical information about individuals, including links to obituaries or Find a Grave. 
 * update to information that is dated! These articles are 10+ years old, some up to 50! What has happened since then? 
 * Questions or gaps in information. You can indicate that some piece of information is not accessible. 
+* Links to other publications by RHS, W&L, or other local organizations. 
 * FYI you can make any of your tags a link by including the ref attribute. Example: `<persName ref="http://www.google.com">`
 
 **Specs:**
